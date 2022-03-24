@@ -116,38 +116,46 @@ const weaponsArray = [
 // Rooms Array
 
 const roomsArray = [
-  {
-name: 'Dining Room',
-name: 'Conservatory',
-name: 'Kitchen',
-name: 'Study',
-name: 'Library',
-name: 'Billiard Room',
-name: 'Lounge',
-name: 'Ballroom',
-name: 'Hall',
-name: 'Spa',
-name: 'Living Room',
-name: 'Observatory',
-name: 'Theater',
-name: 'Guest House',
-name: 'Patio',
-  }
+{  name: 'Dining Room'},
+{  name: 'Conservatory'},
+{  name: 'Kitchen'},
+{  name: 'Study'},
+{  name: 'Library'},
+{  name: 'Billiard Room'},
+{  name: 'Lounge'},
+{  name: 'Ballroom'},
+{  name: 'Hall'},
+{  name: 'Spa'},
+{  name: 'Living Room'},
+{  name: 'Observatory'},
+{  name: 'Theater'},
+{  name: 'Guest House'},
+{  name: 'Patio' },
 ];
 
 
 // ITERATION 2
 
 function selectRandom(array) {
+  if(array.length === 0){
+    return undefined;
+  }
 
-const randoms = Math.floor(Math.random() * suspectsArray.length);
-return randoms;
+  return array[Math.floor(Math.random() * array.length)];
+  
+} 
 
-}
+
 
 function pickMystery() {
 
-  let misteryHere = [randomsSuspect, randomRooms, randomsSuspect];
+  let misteryHere = [
+    {
+     suspect: randomsSuspect, 
+     room: randomRooms,
+     weapon: randomWeapons,
+    }
+  ];
 
   const randomsSuspect = Math.floor(Math.random() * suspectsArray.length);
   console.log(randomsSuspect);
@@ -158,7 +166,7 @@ function pickMystery() {
 
 }
 
-pickMystery(misteryHere);
+//pickMystery(misteryHere);
 
 
 // ITERATION 3
